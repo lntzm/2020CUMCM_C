@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import jieba
 import pandas as pd
 import os

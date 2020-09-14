@@ -7,10 +7,6 @@ from sklearn.model_selection import train_test_split
 from sklearn import preprocessing
 from SVM import SVM
 
-# 选择标准化方法
-# preproMethod = preprocessing.StandardScaler()
-# sc_run = preprocessing.StandardScaler()
-
 
 def getData(filename, ABC):
     """
@@ -65,7 +61,7 @@ def dataPreprocess(data, label):
     :return: 训练集数据、测试集数据、训练集标签、测试集标签
     """
     preproMethod = preprocessing.StandardScaler()
-    # input_data = preprocessing.Normalizer().fit_transform(input_data)
+    # preproMethod = preprocessing.Normalizer()
     data = preproMethod.fit_transform(data)
     trainData, testData, trainLabel, testLabel = train_test_split(
         data, label, test_size=0.1, random_state=10)

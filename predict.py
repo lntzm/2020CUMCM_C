@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import joblib
 import pandas as pd
 import numpy as np
@@ -23,7 +24,7 @@ def getSecondData(filename, firstLabel):
     id = np.array(data['企业代号'])
     data = np.array(data.loc[:, '销项总额': '发票作废率'])
     preproMethod = preprocessing.StandardScaler()
-    # input_data = preprocessing.Normalizer().fit_transform(input_data)
+    # preproMethod = preprocessing.Normalizer()
     data = preproMethod.fit_transform(data)
     return id, data
 

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import numpy as np
 from sklearn.svm import SVC
 from sklearn import metrics
@@ -36,6 +37,13 @@ class SVM:
         print("Best parameters: {}, with a score of {:.2f}".format(
             grid.best_params_, grid.best_score_))
         # self.drawParams(grid, rangeC, rangeGamma)
+
+        # def plotParams(self, grid, rangeC, rangeGamma):
+        #     scores = grid.cv_results_['mean_test_score'].reshape(len(rangeC), len(rangeGamma))
+        #     plt.imshow(scores, interpolation='nearest')
+        #     plt.xlabel('gamma')
+        #     plt.ylabel('C')
+        #     plt.show()
 
     def crossValidation(self):
         # 十折交叉验证
